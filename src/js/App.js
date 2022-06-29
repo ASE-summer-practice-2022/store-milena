@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import data from "./data.json";
+import data from "../json/data.json";
 //components
 import Header from "./Header";
 import ToDoList from "./ToDoList";
 
-import './App.css';
+import '../css/App.css';
 
 function App() {
     const [ toDoList, setToDoList ] = useState(data);
