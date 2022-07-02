@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ToDo = ({todo, completeTask, deleteTask}) => {
+
+const ToDo = ({todo, completeTask, deleteTask}: any) => {
     return (
 
         <div className="d-flex justify-content-center row">
@@ -10,7 +11,7 @@ const ToDo = ({todo, completeTask, deleteTask}) => {
             </div>
             <button type="button" className="btn btn-light col-xs-2" onClick={() => deleteTask(todo.id)}>x</button>
         </div>
-);
+    );
 };
 
 export default ToDo;
