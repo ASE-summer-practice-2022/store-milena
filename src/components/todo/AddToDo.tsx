@@ -1,11 +1,15 @@
 import React, {useState} from 'react';
+import "../../styles/buttonAdd.scss";
+
 
 function AddTodo ({ addTask }:any) {
     const [taskName, setTaskName] = useState("");
 
     const handleSubmit = (evt: any) => {
         evt.preventDefault();
-        addTask(taskName)
+        addTask(taskName);
+        setTaskName("");
+
     }
 
     return (
@@ -14,7 +18,7 @@ function AddTodo ({ addTask }:any) {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    className="input"
+                    className="form__input"
                     value={taskName}
                     onChange={e => setTaskName(e.target.value)}
                     placeholder="Add a new task"

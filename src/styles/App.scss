@@ -2,7 +2,10 @@ $var1: #282c34;
 $var2: #61dafb;
 
 .App {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
   text-align: center;
+  line-height: 40px;
   &-logo {
     height: 40vmin;
     pointer-events: none;
@@ -14,7 +17,7 @@ $var2: #61dafb;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px ;
+    font-family: 'Roboto', sans-serif;
     color: white;
   }
   &-link {
@@ -25,7 +28,6 @@ $var2: #61dafb;
   animation: App-logo-spin infinite 20s linear;
 }
 @keyframes App-logo-spin {
-  transform: rotate(0deg);
 }
 to {
   transform: rotate(360deg);

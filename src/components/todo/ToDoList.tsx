@@ -13,7 +13,7 @@ const ToDoList = ({toDoList, setToDoList}: any) => {
 
     const addTask = (taskName: any) => {
         const newTasks = [...toDoList];
-        newTasks.push({id: newTasks.length, task: taskName, complete: false});
+        newTasks.push({id: newTasks.length + 1, task: taskName, complete: false});
         setToDoList(newTasks);
     };
 

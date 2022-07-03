@@ -1,0 +1,39 @@
+.wrapper {
+  position: absolute;
+}
+a {
+  display: block;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  span {
+    position: relative;
+    z-index: 2;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: all .35s;
+    border-radius: 3px;
+  }
+  &:hover {
+    color: #fff;
+    &:after {
+      width: 100%;
+    }
+  }
+}
