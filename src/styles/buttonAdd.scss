@@ -1,11 +1,4 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  font-size: 62,5%;
-}
+@import "colors.modules";
 
 body {
   height: 100vh;
@@ -17,7 +10,7 @@ body {
 }
 
 .form__label {
-  font-family: sans-serif;
+  font-family: Yanone Kaffeesatz;
   font-size: 1.2rem;
   margin-left: 2rem;
   margin-top: 0.7rem;
@@ -27,24 +20,27 @@ body {
 }
 
 .form__input {
-  font-family: 'Roboto', sans-serif;
+  font-family: Yanone Kaffeesatz;
   color: #333;
   font-size: 18px;
   text-align: center;
   margin: 0 auto;
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
-  background-color: rgb(232, 232, 232);
+  background-color: $lightGray;
   border: none;
   width: 90%;
   display: block;
   border-bottom: 0.3rem solid transparent;
   transition: all 0.3s;
-}
-
-.form__input:placeholder-shown + .form__label {
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(-4rem);
-  transform: translateY(-4rem);
+  &:placeholder-shown {
+    + {
+      .form__label {
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: translateY(-4rem);
+        transform: translateY(-4rem);
+      }
+    }
+  }
 }
