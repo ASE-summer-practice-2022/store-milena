@@ -1,37 +1,20 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ToDo from './ToDo';
 import AddTodo from "./AddToDo";
+import Context, {TodoContextType} from '../../context/context';
 
-const ToDoList = ({toDoList, setToDoList}: any) => {
+function ToDoList() {
 
-    const completeTask = (index: any) => {
-        const newTasks = [...toDoList];
-        let indexTrue = toDoList.findIndex((e: any, i: number, a: object) => e.id === index)
-        newTasks[indexTrue].complete = !newTasks[indexTrue].complete;
-        setToDoList(newTasks);
-    };
-
-    const addTask = (taskName: any) => {
-        const newTasks = [...toDoList];
-        newTasks.push({id: newTasks.length + 1, task: taskName, complete: false});
-        setToDoList(newTasks);
-    };
-
-    const deleteTask = (index: any) => {
-        const newTasks = [...toDoList];
-        let indexTrue = toDoList.findIndex((e: any, i: number, a: object) => e.id === index)
-        newTasks.splice(indexTrue, 1);
-        setToDoList(newTasks);
-    };
+    const {newCRUD} = useContext(Context) as TodoContextType;
 
     return (
         <div>
-            {toDoList.map((todo: any) => {
+            {newCRUD.toDoList.map((todo: any) => {
                 return (
-                    <ToDo todo={todo} completeTask={completeTask}  deleteTask={deleteTask}/>
+                    <ToDo todo={todo} updateTask={newCRUD.updateTask}  deleteTask={newCRUD.deleteTask}/>
                 )
             })}
-            <AddTodo addTask={addTask}/>
+            <AddTodo addTask={newCRUD.addTask}/>
         </div>
     );
 };

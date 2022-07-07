@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import "../../styles/buttonAdd.scss";
+import Context, {TodoContextType} from "../../context/context";
 
 
 function AddTodo ({ addTask }:any) {
     const [taskName, setTaskName] = useState("");
 
+    const {newCRUD} = useContext(Context) as TodoContextType;
+
     const handleSubmit = (evt: any) => {
         evt.preventDefault();
-        addTask(taskName);
+        newCRUD.addTask(taskName);
         setTaskName("");
 
     }
