@@ -4,7 +4,7 @@ import CRUD from "./crud";
 import Context from "./context/context";
 
 //components
-import Header from "./components/Header";
+import Header from "./components/common/Header";
 import ToDoList from "./components/todo/ToDoList";
 
 import './styles/App.scss';

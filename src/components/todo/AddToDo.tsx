@@ -3,7 +3,7 @@ import "../../styles/buttonAdd.scss";
 import Context, {TodoContextType} from "../../context/context";
 
 
-function AddTodo ({ addTask }:any) {
+function AddTodo () {
     const [taskName, setTaskName] = useState("");
 
     const {newCRUD} = useContext(Context) as TodoContextType;

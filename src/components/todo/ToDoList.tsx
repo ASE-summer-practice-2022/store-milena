@@ -14,7 +14,7 @@ function ToDoList() {
                     <ToDo todo={todo} updateTask={newCRUD.updateTask}  deleteTask={newCRUD.deleteTask}/>
                 )
             })}
-            <AddTodo addTask={newCRUD.addTask}/>
+            <AddTodo/>
         </div>
     );
 };

@@ -3,7 +3,7 @@ import "../../styles/buttonDelete.scss";
 import Context, {TodoContextType} from "../../context/context";
 
 
-const ToDo = ({todo, completeTask, deleteTask}: any) => {
+const ToDo = ({todo}: any) => {
 
     const {newCRUD} = useContext(Context) as TodoContextType;
 
