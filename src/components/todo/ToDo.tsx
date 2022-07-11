@@ -9,14 +9,18 @@ const ToDo = ({todo}: any) => {
 
     return (
 
-        <div className="d-flex justify-content-center row list-group-item col-xs-2">
-            <div className="list-group-item col-xs-2" style={{textDecoration: todo.complete ? "line-through" : ""}}
+        <div>
+            <table>
+            <tr>
+                <td><div style={{textDecoration: todo.complete ? "line-through" : ""}}
                  onClick={() => newCRUD.updateTask(todo.id)}>
                 {todo.task}
-            </div>
-            <div className="wrapper list-group-item col-xs-2">
+            </div></td>
+                    <td><div>
                 <a onClick={() => newCRUD.deleteTask(todo.id)}><span>delete</span></a>
-            </div>
+            </div></td>
+            </tr>
+            </table>
         </div>
     );
 };

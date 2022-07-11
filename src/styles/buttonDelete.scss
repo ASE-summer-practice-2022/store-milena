@@ -17,6 +17,7 @@ a {
   text-align: center;
   position: relative;
   transition: all .35s;
+  background: white;
   span {
     position: relative;
     z-index: 2;
@@ -38,4 +39,10 @@ a {
       width: 100%;
     }
   }
+}
+td {
+  text-align: center;
+  position: relative;
+  width: 150px;
+  padding: 1px 10px;
 }

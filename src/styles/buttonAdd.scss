@@ -21,17 +21,18 @@ body {
 
 .form__input {
   font-family: Yanone Kaffeesatz;
-  color: #333;
+  color: grey;
   font-size: 18px;
   text-align: center;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 0.2rem;
   background-color: $lightGray;
   border: none;
   width: 90%;
+  height: 100%;
   display: block;
-  border-bottom: 0.3rem solid transparent;
+  border-bottom: 0.1rem solid transparent;
   transition: all 0.3s;
   &:placeholder-shown {
     + {

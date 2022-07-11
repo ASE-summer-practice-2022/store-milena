@@ -4,14 +4,10 @@
   font-family: Yanone Kaffeesatz;
   font-size: 18px;
   text-align: center;
-  line-height: 40px;
+  line-height: 20px;
+
 }
-@media (prefers-reduced-motion: no-preference) {
-  animation: App-logo-spin infinite 20s linear;
-}
-@keyframes App-logo-spin {
-}
-to {
-  transform: rotate(360deg);
-}
+
+
+
 
