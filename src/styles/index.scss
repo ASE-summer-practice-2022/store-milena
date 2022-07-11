@@ -1,5 +1,5 @@
 @keyframes animatedBackground {
-0 {
+from {
   background-position: 0 0;
 }
 100% {
@@ -10,7 +10,7 @@
 
 /* Mozilla Firefox 5.0+ */
 @-moz-keyframes animatedBackground {
-0 {
+from {
   background-position: 0 0;
 }
 100% {
@@ -19,7 +19,7 @@
 }
 /* Safari 4.0+, Chrome 4.0+ */
 @-webkit-keyframes animatedBackground {
-0 {
+from {
   background-position: 0 0;
 }
 100% {
@@ -28,7 +28,7 @@
 }
 /* Opera 12.0+ */
 @-o-keyframes animatedBackground {
-0 {
+from {
   background-position: 0 0;
 }
 100% {
