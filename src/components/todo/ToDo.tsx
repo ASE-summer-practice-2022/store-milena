@@ -9,18 +9,24 @@ const ToDo = ({todo}: any) => {
 
     return (
 
-        <div>
-            <table>
-            <tr>
-                <td><div style={{textDecoration: todo.complete ? "line-through" : ""}}
-                 onClick={() => newCRUD.updateTask(todo.id)}>
-                {todo.task}
-            </div></td>
-                    <td><div>
-                <a onClick={() => newCRUD.deleteTask(todo.id)}><span>delete</span></a>
-            </div></td>
-            </tr>
-            </table>
+        <div className="products clearfix">
+            <div className="product-wrapper">
+                <div className="product">
+                    {/*PHOTO*/}
+                    <div className="product-photo">
+                        <img src="https://html5book.ru/wp-content/uploads/2015/10/black-dress.jpg"></img>
+                    </div>
+
+                    {/*DESCRIPTION*/}
+                    <div style={{textDecoration: todo.complete ? "line-through" : ""}}
+                     onClick={() => newCRUD.updateTask(todo.id)}>
+                        <p>{todo.task}</p>
+                    </div>
+
+                    {/*BUTTON*/}
+
+                </div>
+            </div>
         </div>
     );
 };

@@ -1,5 +1,4 @@
 import React, {useContext, useState} from 'react';
-import "../../styles/buttonAdd.scss";
 import Context, {TodoContextType} from "../../context/context";
 
 
