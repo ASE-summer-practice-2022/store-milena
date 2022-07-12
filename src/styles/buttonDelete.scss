@@ -1,106 +1,47 @@
 @import 'colors.modules';
 
-.product-wrapper {
+.product-card {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-  float: left;
-  transition: width .2s;
-}
-.product {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #b5e9a7;
-  border-radius: 3px;
-  position: center;
-  background: #fff;
-  margin: 0 20px 20px 0;
-  text-decoration: none;
-  color: #474747;
-  z-index: 0;
-  flex: 300px;
-}
-.products {
-  list-style: none;
-  margin: 0 -20px 0 0;
-  padding: 0;
-  width: 1000px;
-}
-@media only screen and (min-width: 450px) {
-  .product-wrapper {
-    width: 50%;
-  }
-}
 
-@media only screen and (min-width: 768px) {
-  .product-wrapper {
-    width: 33.333%;
-  }
-}
+  padding: 2%;
+  flex: 1 16%;
 
-@media only screen and (min-width: 1000px) {
-  .product-wrapper {
-    width: 25%;
-  }
-}
-.product-photo {
-  position: relative;
-  padding-bottom: 100%;
-  overflow: hidden;
-}
-.product-photo img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  max-width: 100%;
-  max-height: 100%;
+  background-color: #FFF;
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
+
+  width: 200px;
+  height: 200px;
   margin: auto;
-  transition: transform .4s ease-out;
 }
-.product:hover .product-photo img {
-  transform: scale(1.05);
-}
-.product p {
-  position: relative;
-  margin: 0;
-  font-size: 1em;
-  line-height: 1.4em;
-  height: 5.6em;
-  overflow: hidden;
-}
-.product:hover .product-preview {
-  transform: translateY(0);
-  opacity: 1;
-}
-.product-buttons-wrap {
-  position: absolute;
-  top: 0;
-  left: -1px;
-  right: -1px;
-  bottom: 0;
-  visibility: hidden;
-  opacity: 0;
-  transform: scaleY(.8);
-  transform-origin: top;
-  transition: transform .2s ease-out;
-  z-index: -1;
-  backface-visibility: hidden;
-}
-.product-buttons-wrap:before {
-  content: "";
-  float: left;
-  height: 100%;
+
+.product-image img {
   width: 100%;
 }
-.buttons {
-  position: relative;
-  top: -1px;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
-  border: 1px solid #56bd4b;
-  border-radius: 3px;
+
+.product-info {
+  padding-top: 5px;
+  text-align: left;
+  font-size: 35px;
+}
+
+.product-delete {
+  padding-left: 150px;
+  size: 20px;
+}
+
+@media ( max-width: 920px ) {
+
+  .product-card {
+    flex: 1 21%;
+  }
+
+}
+
+@media ( max-width: 600px ) {
+
+  .product-card {
+    flex: 1 46%;
+  }
+
 }

@@ -1,23 +1,23 @@
 import React, {useContext} from 'react';
-import ToDo from './ToDo';
-import AddTodo from "./AddToDo";
+import ProductItem from './ProductItem';
 import "../../styles/buttonAdd.scss";
 import Context, {TodoContextType} from '../../context/context';
 
-function ToDoList() {
+function ProductList() {
 
     const {newCRUD} = useContext(Context) as TodoContextType;
 
     return (
-        <div>
+        <nav className="product-filter">
+            <section className="products">
             {newCRUD.toDoList.map((todo: any) => {
                 return (
-                    <ToDo todo={todo} updateTask={newCRUD.updateTask}  deleteTask={newCRUD.deleteTask}/>
+                    <ProductItem todo={todo} />
                 )
             })}
-            <AddTodo/>
-        </div>
+            </section>
+        </nav>
     );
 };
 
-export default ToDoList;
+export default ProductList;

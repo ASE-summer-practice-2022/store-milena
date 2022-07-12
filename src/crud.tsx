@@ -18,7 +18,7 @@ export default class CRUD {
 
     addTask(taskName: any) {
         const newTasks = [...this.toDoList];
-        newTasks.push({id: newTasks.length + 1, task: taskName, complete: false});
+        newTasks.push({id: newTasks.length + 1, name: taskName, complete: false});
         this.setToDoList(newTasks);
     }
 

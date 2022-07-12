@@ -5,7 +5,7 @@ import Context from "./context/context";
 
 //components
 import Header from "./components/common/Header";
-import ToDoList from "./components/todo/ToDoList";
+import ProductList from "./components/Products/ProductList";
 
 import './styles/App.scss';
 
@@ -18,7 +18,7 @@ function App(){
         <Context.Provider value={{newCRUD}}>
         <div className="App">
             <Header />
-            <ToDoList/>
+            <ProductList/>
         </div>
         </Context.Provider>
 

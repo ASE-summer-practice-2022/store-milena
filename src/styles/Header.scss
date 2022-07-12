@@ -1,0 +1,33 @@
+@import 'colors.modules';
+
+/* Add a black background color to the top navigation */
+.head {
+    background-color: #404040;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.head a {
+    float: left;
+    color: lightGray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.head a:hover {
+    background-color: darkGrey;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.head a.active {
+    background-color: DarkSlateBlue;
+    color: white;
+}
