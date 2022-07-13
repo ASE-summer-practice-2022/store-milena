@@ -7,11 +7,11 @@
   padding: 2%;
   flex: 1 16%;
 
-  background-color: #FFF;
+  background-color: white;
   box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
 
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 250px;
   margin: auto;
 }
 
@@ -26,22 +26,38 @@
 }
 
 .product-delete {
-  padding-left: 150px;
+  position: absolute;
+  margin: 220px 0px 0px 170px;
   size: 20px;
 }
 
 @media ( max-width: 920px ) {
-
   .product-card {
     flex: 1 21%;
   }
-
 }
 
 @media ( max-width: 600px ) {
-
   .product-card {
     flex: 1 46%;
   }
+}
 
+.todoName {
+  font-size: 30px;
+  margin-top: -5px;
+}
+.todoName:hover {
+  font-size: 30px;
+  margin-top: -5px;
+  color: $Byzantium;
+}
+.todoSubstanceName {
+  font-size: 16px;
+  margin-top: -5px;
+  word-break: break-all;
+}
+.todoImage {
+  position: fixed;
+  margin-top: -5px;
 }

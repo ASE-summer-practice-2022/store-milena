@@ -16,8 +16,9 @@ const ProductItem = ({todo}: any) => {
                     {/*DESCRIPTION*/}
                     <div className="product-info" style={{textDecoration: todo.complete ? " " : ""}}
                      onClick={() => newCRUD.updateTask(todo.id)}>
-                        <p>{todo.name}</p>
-                        <p>{todo.substance.name}</p>
+                        <p className="todoName">{todo.name}</p>
+                        <p className="todoSubstanceName">{todo.substance.name}</p>
+                        <div className="todoImg"><img src={todo.image} width='120px' height='120px'/></div>
                     </div>
 
                     {/*BUTTON*/}

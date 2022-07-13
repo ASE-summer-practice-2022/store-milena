@@ -2,27 +2,29 @@
 
 /* Add a black background color to the top navigation */
 .head {
-    background-color: #404040;
+    background-color: DimGray;
     overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    font-family: Roboto;
 }
 
 /* Style the links inside the navigation bar */
 .head a {
     float: left;
-    color: lightGray;
+    color: Gainsboro;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
+    font-family: Roboto;
 }
 
 /* Change the color of links on hover */
 .head a:hover {
-    background-color: darkGrey;
+    background-color: DimGray;
     color: black;
 }
 

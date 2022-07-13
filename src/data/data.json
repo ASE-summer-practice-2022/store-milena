@@ -1,8 +1,9 @@
 [{
   "id": 0,
-  "name": "ТУтуту",
+  "name": "Мелаксен",
+  "image": "https://opt-1591538.ssl.1c-bitrix-cdn.ru/upload/iblock/4ba/4ba29593a193d775a8d65c4d1cbab84a.jpg?165359288531940",
   "substance": {
-    "name": "ту",
+    "name": "Мелатонин",
     "id": 0,
     "code": "string"
   },
@@ -10,9 +11,10 @@
 },
   {
     "id": 1,
-    "name": "Бабаба",
+    "name": "Фенибут",
+    "image": "https://ozerki.ru/upload/iblock/740/740353935ab2c7a1b259dc0503754d51.jpg",
     "substance": {
-      "name": "ба",
+      "name": "Аминофенилмасляная кислота",
       "id": 1,
       "code": "string"
     },
@@ -20,9 +22,10 @@
   },
   {
     "id": 2,
-    "name": "Какака",
+    "name": "Мидокалм",
+    "image": "https://ozerki.ru/upload/iblock/f4f/f4f1cc961e86c4bb89dccb12e65f8933.jpg",
     "substance": {
-      "name": "ка",
+      "name": "Толперизон",
       "id": 2,
       "code": "string"
     },
@@ -30,9 +33,10 @@
   },
   {
     "id": 3,
-    "name": "ЦЕЦЕЦЕ",
+    "name": "Мексидол",
+    "image": "https://pictures1.apteka-april.ru/products/5691/390/31a295fa04450455b69c5dd850b697a7.webp",
     "substance": {
-      "name": "Це",
+      "name": "Этилметилгидроксипиридина сукцинат",
       "id": 3,
       "code": "string"
     },
@@ -40,60 +44,66 @@
   },
   {
     "id": 4,
-    "name": "чечече",
+    "name": "Мексиприм",
+    "image": "https://aptekizabota.ru/upload/resize_cache/iblock/18f/800_800_1076e498b8f486e5ddbe9840eb445f37c/18f7e2faaf47612f81f1f91663df2b68.jpg",
     "substance": {
-      "name": "че",
+      "name": "Этилметилгидроксипиридина сукцинат",
+      "id": 3,
+      "code": "string"
+    },
+    "substanceId": "string"
+  },
+  {
+    "id": 5,
+    "name": "Кагоцел",
+    "image": "https://helpyou.ru/image/catalog/e/kn0_000000027415_000002361.jpg",
+    "substance": {
+      "name": "Кагоцел",
       "id": 4,
       "code": "string"
     },
     "substanceId": "string"
   },
   {
-    "id": 4,
-    "name": "чечече",
+    "id": 5,
+    "name": "Ноофен",
+    "image": "https://f.stolichki.ru/s/drugs/large/14/14618.jpg",
     "substance": {
-      "name": "че",
-      "id": 4,
+      "name": "Аминофенилмасляной кислоты гидрохлорид",
+      "id": 6,
       "code": "string"
     },
     "substanceId": "string"
   },
   {
-    "id": 4,
-    "name": "чечече",
+    "id": 6,
+    "name": "Кетанов",
+    "image": "https://ovita.ru/upload/element/2143735.jpg",
     "substance": {
-      "name": "че",
-      "id": 4,
+      "name": "Кеторолак",
+      "id": 7,
       "code": "string"
     },
     "substanceId": "string"
   },
   {
-    "id": 4,
-    "name": "чечече",
+    "id": 7,
+    "name": "Нурофен",
+    "image": "https://i.apteka24.ua/products/589ff670-f6c5-4478-9c86-4eb66b72c576.jpeg",
     "substance": {
-      "name": "че",
-      "id": 4,
+      "name": "Ибупрофен",
+      "id": 8,
       "code": "string"
     },
     "substanceId": "string"
   },
   {
-    "id": 4,
-    "name": "чечече",
+    "id": 8,
+    "name": "Ибупрофен",
+    "image": "https://f.stolichki.ru/s/drugs/large/21/21515.jpg",
     "substance": {
-      "name": "че",
-      "id": 4,
-      "code": "string"
-    },
-    "substanceId": "string"
-  },
-  {
-    "id": 4,
-    "name": "чечече",
-    "substance": {
-      "name": "че",
-      "id": 4,
+      "name": "Ибупрофен",
+      "id": 8,
       "code": "string"
     },
     "substanceId": "string"

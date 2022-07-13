@@ -36,27 +36,12 @@ export default function ButtonAppBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-
                     </Typography>
-                    <Button color="inherit" href="/Basket">Basket</Button>
-                    <Button color="inherit" href="/">Home</Button>
+                    <Button color="inherit" href="/Basket">Корзина</Button>
+                    <Button color="inherit" href="/">Главная</Button>
                 </Toolbar>
             </AppBar>
         </Box>
         </ThemeProvider>
     );
 }
-
-
-// const Header = () => {
-//     return (
-//         <header>
-//             <div className="head">
-//                 <a className="active" href="#home">Home</a>
-//                 <a href="Basket.html">Basket</a>
-//             </div>
-//         </header>
-//     );
-// };
-//
-// export default Header;
