@@ -1,31 +1,31 @@
 import React from 'react';
 
 export default class CRUD {
-    toDoList: any;
-    setToDoList: any;
+    CardStore: any;
+    setCardStore: any;
 
-    constructor(toDoList: any, setToDoList: any) {
-        this.toDoList = toDoList;
-        this.setToDoList = setToDoList;
+    constructor(CardStore: any, setCardStore: any) {
+        this.CardStore = CardStore;
+        this.setCardStore = setCardStore;
     }
 
     updateTask(index: any) {
-        const newTasks = [...this.toDoList];
-        let indexTrue = this.toDoList.findIndex((e: any, i: number, a: object) => e.id === index)
+        const newTasks = [...this.CardStore];
+        let indexTrue = this.CardStore.findIndex((e: any, i: number, a: object) => e.id === index)
         newTasks[indexTrue].complete = !newTasks[indexTrue].complete;
-        this.setToDoList(newTasks);
+        this.setCardStore(newTasks);
     }
 
     addTask(taskName: any) {
-        const newTasks = [...this.toDoList];
+        const newTasks = [...this.CardStore];
         newTasks.push({id: newTasks.length + 1, name: taskName, complete: false});
-        this.setToDoList(newTasks);
+        this.setCardStore(newTasks);
     }
 
     deleteTask(index: any) {
-        const newTasks = [...this.toDoList];
-        let indexTrue = this.toDoList.findIndex((e: any, i: number, a: object) => e.id === index)
+        const newTasks = [...this.CardStore];
+        let indexTrue = this.CardStore.findIndex((e: any, i: number, a: object) => e.id === index)
         newTasks.splice(indexTrue, 1);
-        this.setToDoList(newTasks);
+        this.setCardStore(newTasks);
     }
 }

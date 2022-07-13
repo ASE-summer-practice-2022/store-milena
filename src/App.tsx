@@ -5,23 +5,23 @@ import Context from "./context/context";
 
 //components
 import Header from "./components/common/Header";
-import ProductList from "./components/Products/ProductList";
+import { ProductList } from "./components/Pages/ProductList";
 
 import './styles/App.scss';
 
 function App(){
-    const [ toDoList, setToDoList ] = useState(data);
+    const [ CardStore, setCardStore ] = useState(data);
 
-    const newCRUD = new CRUD(toDoList,setToDoList);
+    const newCRUD = new CRUD(CardStore,setCardStore);
 
     return (
-        <Context.Provider value={{newCRUD}}>
-        <div className="App">
-            <Header />
-            <ProductList/>
-        </div>
-        </Context.Provider>
-
+        <>
+            <Context.Provider value={{newCRUD}}>
+                <div className="App">
+                    <Header />
+                </div>
+            </Context.Provider>
+        </>
     );
 }
 
