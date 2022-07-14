@@ -1,0 +1,165 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest/globals": true
+  },
+  "globals": {
+    "APPMODE": "readonly"
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint-config-prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "template-curly-spacing": "off",
+    "arrow-body-style": "off",
+    "no-unused-vars": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".ts",
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 120
+      }
+    ],
+//        "no-unused-vars": [
+//          "error",
+//          {
+//            "args": "none"
+//          }
+//        ],
+    "keyword-spacing": [
+      "error",
+      {
+        "after": true,
+        "before": true
+      }
+    ],
+    "jsx-one-expression-per-line": 0,
+    "no-underscore-dangle": 0,
+    "arrow-parens": "off",
+    "arrow-spacing": "error",
+    "prefer-template": 0,
+    "no-restricted-syntax": "warn",
+    "no-plusplus": 0,
+    "no-console": 0,
+    "linebreak-style": 0,
+    "no-param-reassign": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": ["TemplateLiteral"],
+        "SwitchCase": 1
+      }
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+
+    // new
+    "prefer-destructuring": ["warn", { "object": true, "array": false }],
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-prototype-builtins": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "no-var-requires": "off",
+    "no-bitwise": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "class-methods-use-this": "off",
+    "no-unused-expressions": "off",
+    "no-await-in-loop": "off",
+    "react/require-default-props": "off",
+    "consistent-return": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "no-empty-function": "off",
+    "array-callback-return": "off",
+    "import/no-extraneous-dependencies": "off",
+    "simple-import-sort/imports": "error",
+    "semi": "off",
+    "@typescript-eslint/semi": ["error"],
+    "no-shadow": "off",
+    "default-case": "warn",
+    "react/sort-comp": "warn",
+    "react/jsx-no-bind": "warn",
+    "react/jsx-key": "error",
+    "check": "tsc --noEmit --jsx react",
+
+    // TODO delete
+    "react/button-has-type": 0,
+    "react/prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/destructuring-assignment": 0,
+    "no-useless-escape": 0,
+    "react-hooks/rules-of-hooks": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "no-autofix/react-hooks/rules-of-hooks": "error",
+    "no-autofix/react-hooks/exhaustive-deps": "warn",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "include": [
+      "./src/**/*.ts"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "plugins": ["jest", "@babel", "react-hooks", "@typescript-eslint", "simple-import-sort"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {}
+    }
+  }
+}

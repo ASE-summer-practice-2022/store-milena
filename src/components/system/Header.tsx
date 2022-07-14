@@ -3,10 +3,10 @@ import "../../styles/Header.scss";
 import "../../styles/Links.scss";
 
 //ROUTES
-import { Routes, Route, Link } from 'react-router-dom';
-import { ProductList } from '../Pages/ProductList';
-import { Basket } from '../../components/Pages/Basket';
-import { CardReview } from '../../components/Pages/CardReview';
+import routes from '../../route';
+import { Route, Routes, Link } from 'react-router-dom';
+import { Basket } from '../Pages/Basket';
+import CardList from '../CardList';
 
 //MUI
 import AppBar from '@mui/material/AppBar';
@@ -49,11 +49,9 @@ export default function ButtonAppBar() {
             </AppBar>
         </Box>
         </ThemeProvider>
-
             <Routes>
+                <Route path="/" element={<CardList />} />
                 <Route path="/basket" element={<Basket />} />
-                <Route path="/" element={<ProductList />} />
-                <Route path="/cardreview" element={<CardReview />} />
             </Routes>
         </>
     );
