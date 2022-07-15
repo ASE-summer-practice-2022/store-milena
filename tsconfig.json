@@ -9,7 +9,6 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop ": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -20,18 +19,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react",
   },
   "include": [
     "src"
-  ],
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    /* Experimental Options */
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    /* Advanced Options */
-    "forceConsistentCasingInFileNames": true
-  }
+  ]
 }

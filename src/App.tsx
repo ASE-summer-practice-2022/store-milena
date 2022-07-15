@@ -2,7 +2,6 @@ import React from 'react';
 import data from "./data/data.json";
 import { Provider } from 'mobx-react';
 import './styles/App.scss';
-import { BrowserRouter, Route } from 'react-router-dom';
 import JsonData from './data/data.json';
 import './styles/App.scss';
 
@@ -24,11 +23,9 @@ function App() {
 
   return (
       <Provider {...stores}>
-        <BrowserRouter>
           <div className="App">
           <Header />
           </div>
-        </BrowserRouter>
       </Provider>
   );
 }
