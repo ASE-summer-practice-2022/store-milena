@@ -1,3 +1,6 @@
+import React from 'react';
+import "../styles/buttonDelete.scss";
+
 //ROUTES
 import { Routes, Route, Link } from 'react-router-dom';
 import route from '../route';
@@ -6,19 +9,16 @@ import { ItemPage } from '../components/Pages/ItemPage';
 //MUI
 import IconButton from '@mui/material/IconButton';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-
-import React from 'react';
-import "../styles/buttonDelete.scss";
+import Typography from '@mui/material/Typography';
 
 export default function CardItem (data: any) {
     return (
         <div className="product-card">
             {/*DESCRIPTION*/}
             <div className="product-info" onClick={() => data.id}>
-                <Link className="todoName" to="/ItemPage">{data.product.name}</Link>
-                <br/><br/>
-                <p className="todoSubstanceName">{data.product.substanceName}</p>
-                <p className="todoSubstanceName">{data.product.substanceCode}</p>
+                <Typography variant="inherit" ><Link className="todoName" to="/ItemPage">{data.product.name}</Link></Typography>
+                <Typography variant="inherit" className="todoSubstanceName">{data.product.substanceName}</Typography>
+                <Typography variant="inherit" className="todoSubstanceName">{data.product.substanceCode}</Typography>
             </div>
 
             {/*BUTTON*/}

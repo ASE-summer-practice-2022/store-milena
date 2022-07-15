@@ -42,7 +42,7 @@ export default function ButtonAppBar() {
                         sx={{ mr: 2 }}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}/>
+                    <Typography variant="inherit" component="div" sx={{ flexGrow: 1 }}/>
                     <Link className="MuiLinkBase" color="inherit" to="/Basket">Корзина</Link>
                     <Link className="MuiLinkBase" color="inherit" to="/">Главная</Link>
                 </Toolbar>
