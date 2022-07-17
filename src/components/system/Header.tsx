@@ -16,21 +16,10 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-
-const darkTheme = createTheme({
-    palette: {
-        mode: 'dark',
-        primary: {
-            main: '#1976d2',
-        },
-    },
-});
 
 export default function ButtonAppBar() {
     return (
         <>
-        <ThemeProvider theme={darkTheme}>
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" >
                 <Toolbar>
@@ -48,7 +37,6 @@ export default function ButtonAppBar() {
                 </Toolbar>
             </AppBar>
         </Box>
-        </ThemeProvider>
             <Routes>
                 <Route path="/" element={<CardList />} />
                 <Route path="/basket" element={<Basket />} />

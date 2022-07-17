@@ -4,6 +4,8 @@ import { Provider } from 'mobx-react';
 import './styles/App.scss';
 import JsonData from './data/data.json';
 import './styles/App.scss';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import {darkTheme} from './styles/theme/DarkTheme';
 
 //components
 import Header from "./components/system/Header";
@@ -24,7 +26,9 @@ function App() {
   return (
       <Provider {...stores}>
           <div className="App">
-          <Header />
+              <ThemeProvider theme={darkTheme}>
+                <Header />
+              </ThemeProvider>
           </div>
       </Provider>
   );
