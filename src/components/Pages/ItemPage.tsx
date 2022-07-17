@@ -1,11 +1,19 @@
 import React from 'react';
+import {inject, observer} from "mobx-react";
+import { storeNames } from "../../stores/Enum";
+import Item from "../../models/Item";
 
-const ItemPage = ( ) => {
+const ItemPage = inject(storeNames.CardStoreName)(observer((Items: any) => {
+    const cardStore = Items.CardStore;
+    const products = cardStore.items;
+
     return (
         <div>
-            <h1>Товар n</h1>
+            {products.map((product: Item) => (
+                <Items key={product.id} product={product}/>
+            ))}
         </div>
     )
-}
+}))
 
-export { ItemPage }
+export default ItemPage;

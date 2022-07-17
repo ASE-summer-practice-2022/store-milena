@@ -11,8 +11,8 @@ export default function CardItem (data: any) {
     return (
         <div className="product-card">
             {/*DESCRIPTION*/}
-            <div className="product-info" onClick={() => data.id}>
-                <Typography variant="inherit" ><Link className="todoName" to="/ItemPage">{data.product.name}</Link></Typography>
+            <div className="product-info" onClick={() => 'data.id'}>
+                <Typography variant="inherit" ><Link className="todoName" to={`/ItemPage/${data.product.id}`}>{data.product.name}</Link></Typography>
                 <Typography variant="inherit" className="todoSubstanceName">{data.product.substanceName}</Typography>
                 <Typography variant="inherit" className="todoSubstanceName">{data.product.substanceCode}</Typography>
             </div>

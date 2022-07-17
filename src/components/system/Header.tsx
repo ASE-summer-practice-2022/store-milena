@@ -1,7 +1,4 @@
 import React from 'react';
-//styles
-import "../../styles/Header.scss";
-import "../../styles/Links.scss";
 //ROUTES
 import { Link } from "react-router-dom";
 //MUI
@@ -28,8 +25,8 @@ export default function ButtonAppBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="inherit" component="div" sx={{ flexGrow: 1 }}/>
-                    <Link className="MuiLinkBase" color="inherit" to="/Basket">Корзина</Link>
-                    <Link className="MuiLinkBase" color="inherit" to="/">Главная</Link>
+                    <Button component={Link} color="inherit" to="/Basket">Корзина</Button>
+                    <Button component={Link} color="inherit" to="/">Главная</Button>
                 </Toolbar>
             </AppBar>
         </Box>
