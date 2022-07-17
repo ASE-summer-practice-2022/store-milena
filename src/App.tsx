@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'mobx-react';
 import { storeNames } from "./stores/Enum";
+import { BrowserRouter } from 'react-router-dom';
 //data
 import data from "./data/data.json";
 import JsonData from './data/data.json';
@@ -13,6 +14,7 @@ import { darkTheme } from './styles/theme/DarkTheme';
 import Header from "./components/system/Header";
 import CardList from "./components/CardList";
 import CardStore from "./stores/CardStore";
+import RoutesPaths from "./route";
 
 function App() {
     const {products} = JsonData.data;
@@ -25,11 +27,14 @@ function App() {
 
   return (
       <Provider {...stores}>
-          <div className="App">
-              <ThemeProvider theme={darkTheme}>
-                <Header />
-              </ThemeProvider>
-          </div>
+          <BrowserRouter>
+              <div className="App">
+                  <ThemeProvider theme={darkTheme}>
+                      <Header />
+                      <RoutesPaths />
+                  </ThemeProvider>
+              </div>
+          </BrowserRouter>
       </Provider>
   );
 }

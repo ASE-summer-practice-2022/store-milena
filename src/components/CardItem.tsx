@@ -1,11 +1,7 @@
 import React from 'react';
 import "../styles/buttonDelete.scss";
-
 //ROUTES
-import { Routes, Route, Link } from 'react-router-dom';
-import route from '../route';
-import { ItemPage } from '../components/Pages/ItemPage';
-
+import { Link } from 'react-router-dom';
 //MUI
 import IconButton from '@mui/material/IconButton';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -26,9 +22,6 @@ export default function CardItem (data: any) {
                 <IconButton color="secondary" aria-label="add to shopping cart">
                     <AddShoppingCartIcon />
                 </IconButton>
-                <Routes>
-                    <Route path="/ItemPage" element={<ItemPage />} />
-                </Routes>
             </div>
         </div>
     );
