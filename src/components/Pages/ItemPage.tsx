@@ -9,9 +9,7 @@ const ItemPage = inject(storeNames.CardStoreName)(observer((Items: any) => {
 
     return (
         <div>
-            {products.map((product: Item) => (
-                <Items key={product.id} product={product}/>
-            ))}
+            //
         </div>
     )
 }))

@@ -12,10 +12,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { darkTheme } from './styles/theme/DarkTheme';
 //components
 import Header from "./components/system/Header";
-import CardList from "./components/CardList";
 import CardStore from "./stores/CardStore";
 import RoutesPaths from "./route";
-import Basket from "./components/Pages/Basket";
 
 function App() {
     const {products} = JsonData.data;

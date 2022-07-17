@@ -8,10 +8,9 @@ export default function RoutesPaths() {
     return (
         <div>
             <Routes>
-                <Route path="/" element={ <CardList /> } >
-                    <Route path="/Basket" element={ <Basket /> } />
-                    <Route path="/ItemPage/:id" element={<ItemPage />} />
-                </Route>
+                <Route path="/" element={ <CardList /> } />
+                <Route path="/Basket" element={ <Basket /> } />
+                <Route path="/ItemPage/:id" element={<ItemPage />} />
             </Routes>
         </div>
     );
