@@ -34,6 +34,7 @@ const CardList = inject(storeNames.CardStoreName)(observer((Items: any) => {
                   page={page}
                   onChange={handleChange}
                   sx={{ display: "flex", justifyContent: "center", margin: "auto" }}
+                  color="secondary"
                   showFirstButton
                   showLastButton/>
           </>

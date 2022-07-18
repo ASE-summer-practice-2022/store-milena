@@ -2,10 +2,8 @@ import React from 'react';
 import { Provider } from 'mobx-react';
 import { storeNames } from "./stores/Enum";
 //data
-import data from "./data/data.json";
 import JsonData from './data/data.json';
 //styles and themes
-import './styles/App.scss';
 import './styles/App.scss';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { theme } from './styles/theme/Theme';

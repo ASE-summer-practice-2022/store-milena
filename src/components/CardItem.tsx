@@ -1,5 +1,6 @@
 import React from 'react';
 import "../styles/buttonDelete.scss";
+import Basket from "../components/Pages/Basket";
 //ROUTES
 import { Link } from 'react-router-dom';
 //MUI
@@ -22,7 +23,7 @@ export default function CardItem (data: any) {
 
             {/*BUTTON*/}
             <div className="product-delete">
-                <IconButton color="secondary" aria-label="add to shopping cart">
+                <IconButton onClick={() => {<Basket itemId={data.product} />} } color="secondary" aria-label="add to shopping cart">
                     <AddShoppingCartIcon />
                 </IconButton>
             </div>
