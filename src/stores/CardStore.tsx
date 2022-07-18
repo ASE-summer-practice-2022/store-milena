@@ -14,6 +14,10 @@ export default class CardStore {
     this.items = products.map((product: Item) => new Item(product));
   };
 
+  readItem = (id: number) => {
+    return this.items.find((item: Item) => item.id === id);
+  };
+
   addItem(newItem: Item): void {
     let newItems = new Item(this.newItem);
     this.newItem.push(newItems);
