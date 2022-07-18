@@ -1,9 +1,11 @@
 import React from 'react';
+import Header from "../system/Header";
 
 function Basket () {
     return (
         <div>
-                Basket
+            <Header/>
+            Basket
         </div>
     );
 }

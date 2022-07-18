@@ -1,7 +1,6 @@
 import React from 'react';
 import { Provider } from 'mobx-react';
 import { storeNames } from "./stores/Enum";
-import { BrowserRouter } from 'react-router-dom';
 //data
 import data from "./data/data.json";
 import JsonData from './data/data.json';
@@ -9,11 +8,12 @@ import JsonData from './data/data.json';
 import './styles/App.scss';
 import './styles/App.scss';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { darkTheme } from './styles/theme/DarkTheme';
+import { theme } from './styles/theme/Theme';
 //components
-import Header from "./components/system/Header";
 import CardStore from "./stores/CardStore";
 import RoutesPaths from "./route";
+import Header from "./components/system/Header";
+
 
 function App() {
     const {products} = JsonData.data;
@@ -25,16 +25,13 @@ function App() {
     };
 
   return (
-      <Provider {...stores}>
-          <BrowserRouter>
-              <div className="App">
-                  <ThemeProvider theme={darkTheme}>
-                      <Header />
-                      <RoutesPaths />
-                  </ThemeProvider>
-              </div>
-          </BrowserRouter>
-      </Provider>
+      <ThemeProvider theme={theme}>
+          <Provider {...stores}>
+                      <div className="App">
+                          <RoutesPaths/>
+                      </div>
+          </Provider>
+      </ThemeProvider>
   );
 }
 

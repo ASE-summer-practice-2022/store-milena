@@ -3,3 +3,13 @@ $Gainsboro: #DCDCDC;
 $DimGray: #696969;
 $middleGray: #333;
 $Byzantium: #9c27b0;
+$black: black;
+
+:export {
+  White: $White;
+  Gainsboro: $Gainsboro;
+  DimGray: $DimGray;
+  middleGray: $middleGray;
+  Byzantium: $Byzantium;
+  black: $black;
+}
