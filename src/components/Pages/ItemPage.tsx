@@ -1,7 +1,6 @@
 import React from 'react';
 import { inject, observer } from "mobx-react";
 import { storeNames } from "../../stores/Enum";
-import Header from "../system/Header";
 
 //MUI
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
@@ -17,7 +16,6 @@ const ItemPage = inject(storeNames.CardStoreName)(observer((Items: any) => {
 
     return (
         <>
-        <Header/>
             <Card sx={{ maxWidth: "40%", display: "flex", justifyContent: "center", margin: "auto", marginTop: "2em" }}>
                 <CardContent>
                     {/*НАЗВАНИЕ ТОВАРА*/}

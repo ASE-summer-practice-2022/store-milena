@@ -4,7 +4,6 @@ import {inject, observer} from "mobx-react";
 import CardItem from "./CardItem";
 import Item from "../models/Item";
 import {storeNames} from "../stores/Enum";
-import Header from "../components/system/Header";
 import Pagination from '@mui/material/Pagination';
 
 const CardList = inject(storeNames.CardStoreName)(observer((Items: any) => {
@@ -20,7 +19,6 @@ const CardList = inject(storeNames.CardStoreName)(observer((Items: any) => {
     };
       return (
           <>
-            <Header/>
               <nav className="product-filter">
                   <section className="products">
                       { currentItems.map((product: Item) => {

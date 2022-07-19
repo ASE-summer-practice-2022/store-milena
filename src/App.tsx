@@ -25,9 +25,7 @@ function App() {
   return (
       <ThemeProvider theme={theme}>
           <Provider {...stores}>
-                      <div className="App">
-                          <RoutesPaths/>
-                      </div>
+              <RoutesPaths/>
           </Provider>
       </ThemeProvider>
   );

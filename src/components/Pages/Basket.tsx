@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { inject, observer } from "mobx-react";
 import { storeNames } from "../../stores/Enum";
-import Header from "../system/Header";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import BasketStore from "../../stores/BasketStore";
@@ -12,7 +11,6 @@ const Basket = (items: any) => {
 
     return (
         <div>
-            <Header/>
             <Card sx={{ maxWidth: "40%", display: "flex", justifyContent: "center", margin: "auto", marginTop: "2em" }}>
                 <CardContent>
                     {/*НАЗВАНИЕ ТОВАРА*/}
