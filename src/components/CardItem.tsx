@@ -1,6 +1,9 @@
 import React from 'react';
 import "../styles/buttonDelete.scss";
 import Basket from "../components/Pages/Basket";
+import {inject, observer} from "mobx-react";
+import {storeNames} from "../stores/Enum";
+import BasketStore from "../stores/BasketStore";
 //ROUTES
 import { Link } from 'react-router-dom';
 //MUI
@@ -10,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Divider from "@mui/material/Divider";
 
 
-export default function CardItem (data: any) {
+const CardItem = inject(storeNames.BasketStoreName)(observer((data: any) => {
     return (
         <div className="product-card">
             {/*DESCRIPTION*/}
@@ -23,10 +26,12 @@ export default function CardItem (data: any) {
 
             {/*BUTTON*/}
             <div className="product-delete">
-                <IconButton onClick={() => {<Basket itemId={data.product} />} } color="secondary" aria-label="add to shopping cart">
+                <IconButton onClick={() => data.BasketStore.addProduct(data.item)} color="secondary" aria-label="add to shopping cart">
                     <AddShoppingCartIcon />
                 </IconButton>
             </div>
         </div>
     );
-}
+}));
+
+export default CardItem;

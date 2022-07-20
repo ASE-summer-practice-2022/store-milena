@@ -15,7 +15,7 @@ export default class CardService {
         const body = JSON.stringify({ offset:0, limit:50 });
         const type = 'POST';
 
-        const {data} = await this.networkService.fetch(url!, body, type);
-        this.cardStore.setProducts(data.products);
+        const data = await this.networkService.fetch(url!, body, type);
+        this.cardStore.setProducts(data.data.products);
     };
 }
