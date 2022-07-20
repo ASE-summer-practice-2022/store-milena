@@ -2,17 +2,19 @@ import { makeAutoObservable, action, observable } from "mobx";
 import Item from "../models/Item";
 
 export default class CardStore {
+
   items: Item[];
-  newItem: Item[] = [];
+  @observable newItem: Item[] = [];
 
   constructor() {
     makeAutoObservable(this);
     this.items = [];
   }
 
-  setProducts = (products: any): void => {
-    this.items = products.map((product: Item) => new Item(product));
-  };
+  @action
+  setProducts = (products: any) => {
+      this.items = products;
+  }
 
   readItem = (id: number) => {
     return this.items.find((item: Item) => item.id === id);

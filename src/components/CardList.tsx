@@ -1,27 +1,32 @@
-import React, {useState} from "react";
+import React, {useEffect, useState}  from "react";
 import "../styles/buttonAdd.scss";
 import {inject, observer} from "mobx-react";
 import CardItem from "./CardItem";
 import Item from "../models/Item";
 import {storeNames} from "../stores/Enum";
 import Pagination from '@mui/material/Pagination';
+import NetworkService from "../services/NetworkService";
+import {serviceNames} from "../services/Enum";
+import CardService from "../services/CardService";
 
-const CardList = inject(storeNames.CardStoreName)(observer((Items: any) => {
-    const cardStore = Items.CardStore;
-    const products = cardStore.items;
+const CardList = inject(storeNames.CardStoreName, serviceNames.CardServiceName)(observer((Items: any) => {
     const [page, setPage] = useState(1);
-
-    const pagesCount = Math.ceil(products.length / 10);
-    const currentItems = products.slice((page - 1) * 10, page * 10);
+    const paginationCount = 10;
+    const pagesCount = Math.ceil(50 / paginationCount);
 
     const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
         setPage(value);
     };
-      return (
+
+    useEffect(() => {
+        Items.CardService.setCardStore((page - 1) * paginationCount, paginationCount);
+    }, [page]);
+
+    return (
           <>
               <nav className="product-filter">
                   <section className="products">
-                      { currentItems.map((product: Item) => {
+                      { Items.CardStore.items.map((product: Item) => {
                         return ( <CardItem product={product}/>
                           )
                       })}
