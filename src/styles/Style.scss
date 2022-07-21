@@ -1,0 +1,9 @@
+@import 'colors.modules';
+
+.custom-link {
+  color: Black;
+  text-decoration: none;
+}
+.custom-link:hover {
+  color: $Byzantium;
+}

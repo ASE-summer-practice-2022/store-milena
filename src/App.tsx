@@ -15,17 +15,18 @@ import Header from "./components/system/Header";
 import NetworkService from "./services/NetworkService";
 import CardService from "./services/CardService";
 import BasketStore from "./stores/BasketStore";
+import AppStore from "./stores/AppStore";
 
 
 function App() {
-    const endpoint = process.env.ENDPOINT;
-    const token = process.env.TOKEN;
-    const url = process.env.URL;
-    
     const cardStore = new CardStore();
     const basketStore = new BasketStore();
+    const appStore = new AppStore();
 
-    const networkService = new NetworkService(endpoint!, token!);
+    const endpoint = process.env.REACT_APP_ENDPOINT as string;
+    const token = appStore.token;
+
+    const networkService = new NetworkService(endpoint, token);
     const cardService = new CardService(cardStore, networkService);
 
     const stores = {

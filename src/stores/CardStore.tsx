@@ -3,15 +3,24 @@ import Item from "../models/Item";
 
 export default class CardStore {
 
-  @observable items: Item[];
+  items: Item[];
+  count: number;
 
   constructor() {
     makeAutoObservable(this);
     this.items = [];
+    this.count = 0;
   }
 
-  @action setProducts = (products: Item[]) => {
+  setProducts = (products: Item[]) => {
       this.items = products;
   }
 
+  setCount = (count: number) => {
+    this.count = count;
+  };
+
+  readItem(id: number) {
+    return this.items.find((item: Item) => item.id === id);
+  }
 }

@@ -4,8 +4,8 @@ import Item from "../models/Item"
 
 export default class BasketStore {
     @observable products: Item[] = [];
-    items: Item[];
-    newItem: Item[] = [];
+    @observable items: Item[];
+    @observable newItem: Item[] = [];
 
     constructor() {
         makeObservable(this);

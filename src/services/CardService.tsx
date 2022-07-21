@@ -10,12 +10,14 @@ export default class CardService {
         this.cardStore = cardStore;
         this.networkService = networkService;
     }
-    async setCardStore() {
-        const url = process.env.URL;
-        const body = JSON.stringify({ offset:0, limit:50 });
+
+    async setCardStore(offset: number, limit: number) {
+        const url = '/api/products/part';
+        const body = JSON.stringify({ offset, limit });
         const type = 'POST';
 
-        const data = await this.networkService.fetch(url!, body, type);
-        this.cardStore.setProducts(data.data.products);
+        const {data} = await this.networkService.fetch(url, body, type);
+        this.cardStore.setProducts(data.products);
+        this.cardStore.setCount(data.count);
     };
 }
