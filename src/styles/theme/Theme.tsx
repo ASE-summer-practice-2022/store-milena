@@ -12,24 +12,29 @@ export const theme = createTheme({
         fontFamily: [
             'Montserrat'
         ].join(','),
+        allVariants: {
+            fontWeight: 300,
+        },
+        h1: {
+            fontWeight: 400,
+            fontSize: `40px`,
+            color: colors.black,
+        },
         h6: {
             fontWeight: 400,
             fontSize: "large",
-            color: colors.black
+            textDecoration: "none",
         },
         h3: {
-            fontWeight: 300,
             fontSize: "medium",
             color: colors.middleGray
         },
         h4: {
-            fontWeight: 300,
             fontSize: "small",
             color: colors.middleGray
         },
         button: {
-            fontWeight: 300,
-            color: colors.White
+            color: colors.White,
         }
     },
 });

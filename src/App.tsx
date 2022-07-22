@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'mobx-react';
 import { storeNames } from "./stores/Enum";
+import { serviceNames } from "./services/Enum";
 //data
 import JsonData from './data/data.json';
 //styles and themes
@@ -11,23 +12,37 @@ import { theme } from './styles/theme/Theme';
 import CardStore from "./stores/CardStore";
 import RoutesPaths from "./route";
 import Header from "./components/system/Header";
+import NetworkService from "./services/NetworkService";
+import CardService from "./services/CardService";
+import BasketStore from "./stores/BasketStore";
+import AppStore from "./stores/AppStore";
 
 
 function App() {
-    const {products} = JsonData.data;
     const cardStore = new CardStore();
-    cardStore.setProducts(products);
+    const basketStore = new BasketStore();
+    const appStore = new AppStore();
+
+    const endpoint = process.env.REACT_APP_ENDPOINT as string;
+    const token = appStore.token;
+
+    const networkService = new NetworkService(endpoint, token);
+    const cardService = new CardService(cardStore, networkService);
 
     const stores = {
         [storeNames.CardStoreName]: cardStore,
+        [storeNames.BasketStoreName]: basketStore,
+    };
+    
+    const services = {
+        [serviceNames.NetworkServiceName]: networkService,
+        [serviceNames.CardServiceName]: cardService,
     };
 
   return (
       <ThemeProvider theme={theme}>
-          <Provider {...stores}>
-                      <div className="App">
-                          <RoutesPaths/>
-                      </div>
+          <Provider {...stores} {...services}>
+              <RoutesPaths/>
           </Provider>
       </ThemeProvider>
   );
