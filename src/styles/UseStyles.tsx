@@ -9,7 +9,7 @@ const CardStyles = makeStyles(() => ({
         padding: 12,
         backgroundColor: colors.White,
         minWidth: 300,
-        minHeight: 150,
+        minHeight: 180,
     },
     shell: {
         position: 'absolute',

@@ -13,7 +13,7 @@ export default class CardStore {
   }
 
   setProducts = (products: Item[]) => {
-      this.items = products;
+    this.items = products;
   }
 
   setCount = (count: number) => {
@@ -22,5 +22,5 @@ export default class CardStore {
 
   readItem(id: number) {
     return this.items.find((item: Item) => item.id === id);
-  }
+  };
 }

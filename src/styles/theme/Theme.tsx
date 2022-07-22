@@ -23,6 +23,7 @@ export const theme = createTheme({
         h6: {
             fontWeight: 400,
             fontSize: "large",
+            textDecoration: "none",
         },
         h3: {
             fontSize: "medium",

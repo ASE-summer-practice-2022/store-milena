@@ -10,9 +10,10 @@ import CardStyles from "../../styles/UseStyles";
 import cx from 'clsx';
 
 const ItemPage = inject(storeNames.CardStoreName)(observer((props: any) => {
+    const styles = CardStyles();
+
     const cardStore = props.CardStore;
     const { id } = useParams();
-    const styles = CardStyles();
 
     const product = cardStore.readItem(Number(id));
 
@@ -24,8 +25,8 @@ const ItemPage = inject(storeNames.CardStoreName)(observer((props: any) => {
                     <Typography variant="h1"> {product.name} </Typography>
                     <Divider/>
                     {/*ДЕЙСТВУЮЩЕЕ ВЕЩ-ВО*/}
-                    <Typography variant="h6"> {product.substanceName} </Typography>
-                    <Typography variant="h6"> {product.substanceCode} </Typography>
+                    <Typography variant="h6"> {product.substance.name} </Typography>
+                    <Typography variant="h3"> {product.substance.code} </Typography>
                 </CardContent>
             </Card>
         </>

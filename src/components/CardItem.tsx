@@ -12,7 +12,8 @@ import Divider from "@mui/material/Divider";
 import { Card, CardContent, CardMedia, Typography, CardActions, Button, CardActionArea } from "@mui/material";
 import CardStyles from "../styles/UseStyles";
 import cx from 'clsx';
-
+import Item from "../models/Item";
+import "../styles/Style.scss";
 
 const CardItem = inject(storeNames.BasketStoreName)(observer((props: any) => {
     const styles = CardStyles();
@@ -22,12 +23,12 @@ const CardItem = inject(storeNames.BasketStoreName)(observer((props: any) => {
         <Card className={cx(styles.card)}>
             <CardContent>
             {/*DESCRIPTION*/}
-                <Link className="custom-link" to={`/ItemPage/${props.item.id}`}>
+                <Link className={'customLink'} to={`/ItemPage/${props.item.id}`}>
                     <Typography variant="h6">{props.item.name}</Typography>
                 </Link>
                 <Divider/>
-                <Typography variant="h3"> {props.item.substanceName} </Typography>
-                <Typography variant="h4"> {props.item.substanceCode} </Typography>
+                <Typography variant="h3"> {props.item.substance.name} </Typography>
+                <Typography variant="h4"> {props.item.substance.code} </Typography>
             </CardContent>
             <div className={styles.shell} />
             {/*BUTTON*/}
