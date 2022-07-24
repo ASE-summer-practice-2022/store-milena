@@ -7,3 +7,10 @@
 .customLink:hover {
   color: $Byzantium;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 300px;
+}

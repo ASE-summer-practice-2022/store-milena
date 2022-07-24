@@ -4,9 +4,7 @@ import CardItem from "./CardItem";
 import Item from "../models/Item";
 import {storeNames} from "../stores/Enum";
 import {Grid, Pagination} from "@mui/material";
-import NetworkService from "../services/NetworkService";
 import {serviceNames} from "../services/Enum";
-import CardService from "../services/CardService";
 
 const CardList = inject(storeNames.CardStoreName, serviceNames.CardServiceName)(observer((props: any) => {
     const [page, setPage] = useState(1);

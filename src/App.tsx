@@ -2,16 +2,13 @@ import React from 'react';
 import { Provider } from 'mobx-react';
 import { storeNames } from "./stores/Enum";
 import { serviceNames } from "./services/Enum";
-//data
-import JsonData from './data/data.json';
 //styles and themes
 import './styles/App.scss';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import { theme } from './styles/theme/Theme';
 //components
 import CardStore from "./stores/CardStore";
 import RoutesPaths from "./route";
-import Header from "./components/system/Header";
 import NetworkService from "./services/NetworkService";
 import CardService from "./services/CardService";
 import BasketStore from "./stores/BasketStore";

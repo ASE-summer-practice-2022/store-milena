@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import colors from "../colors.modules.scss";
 
 export const theme = createTheme({
@@ -23,7 +23,6 @@ export const theme = createTheme({
         h6: {
             fontWeight: 400,
             fontSize: "large",
-            textDecoration: "none",
         },
         h3: {
             fontSize: "medium",

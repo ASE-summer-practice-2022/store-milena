@@ -1,5 +1,4 @@
 import React from 'react';
-import Basket from "../components/Pages/Basket";
 import {inject, observer} from "mobx-react";
 import {storeNames} from "../stores/Enum";
 import BasketStore from "../stores/BasketStore";
@@ -9,10 +8,9 @@ import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Divider from "@mui/material/Divider";
-import { Card, CardContent, CardMedia, Typography, CardActions, Button, CardActionArea } from "@mui/material";
+import { Card, CardContent, Typography, CardActions } from "@mui/material";
 import CardStyles from "../styles/UseStyles";
 import cx from 'clsx';
-import Item from "../models/Item";
 import "../styles/Style.scss";
 
 const CardItem = inject(storeNames.BasketStoreName)(observer((props: any) => {
@@ -39,23 +37,6 @@ const CardItem = inject(storeNames.BasketStoreName)(observer((props: any) => {
             </CardActions>
         </Card>
         </div>
-
-    // <div className="product-card">
-    //     {/*DESCRIPTION*/}
-    //     <div className="product-info">
-    //         <Typography variant="h6" ><Link className="todoName" to={`/ItemPage/${props.product.id}`}>{props.product.name}</Link></Typography>
-    //         <Divider/>
-    //         <Typography variant="h3" className="todoSubstanceName">{props.product.substanceName}</Typography>
-    //         <Typography variant="h4" className="todoSubstanceName">{props.product.substanceCode}</Typography>
-    //     </div>
-    //
-    //     {/*BUTTON*/}
-    //     <div className="product-delete">
-    //         <IconButton onClick={() => props.BasketStore.addProduct(props.product)} color="secondary" aria-label="add to shopping cart">
-    //             <AddShoppingCartIcon />
-    //         </IconButton>
-    //     </div>
-    // </div>
     );
 }));
 
