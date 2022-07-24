@@ -18,7 +18,7 @@ const CardItem = inject(storeNames.BasketStoreName)(observer((props: any) => {
 
     return (
         <div>
-        <Card className={cx(styles.card)}>
+        <Card className={cx(styles.card)} >
             <CardContent>
             {/*DESCRIPTION*/}
                 <Link className={'customLink'} to={`/ItemPage/${props.item.id}`}>
