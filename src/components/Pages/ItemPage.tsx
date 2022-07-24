@@ -1,31 +1,32 @@
 import React from 'react';
 import { inject, observer } from "mobx-react";
 import { storeNames } from "../../stores/Enum";
-import Header from "../system/Header";
 
 //MUI
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import Divider from "@mui/material/Divider";
+import CardStyles from "../../styles/UseStyles";
+import cx from 'clsx';
 
+const ItemPage = inject(storeNames.CardStoreName)(observer((props: any) => {
+    const styles = CardStyles();
 
-const ItemPage = inject(storeNames.CardStoreName)(observer((Items: any) => {
-    const cardStore = Items.CardStore;
+    const cardStore = props.CardStore;
     const { id } = useParams();
 
-    const item = cardStore.readItem(Number(id));
+    const product = cardStore.readItem(Number(id));
 
     return (
         <>
-        <Header/>
-            <Card sx={{ maxWidth: "40%", display: "flex", justifyContent: "center", margin: "auto", marginTop: "2em" }}>
+            <Card className={cx(styles.card)}>
                 <CardContent>
                     {/*НАЗВАНИЕ ТОВАРА*/}
-                    <Typography variant="h6"> {item.name} </Typography>
+                    <Typography variant="h1"> {product.name} </Typography>
                     <Divider/>
                     {/*ДЕЙСТВУЮЩЕЕ ВЕЩ-ВО*/}
-                    <Typography variant="h3"> {item.substanceName} </Typography>
-                    <Typography variant="h4"> {item.substanceCode} </Typography>
+                    <Typography variant="h6"> {product.substance.name} </Typography>
+                    <Typography variant="h3"> {product.substance.code} </Typography>
                 </CardContent>
             </Card>
         </>
