@@ -1,5 +1,5 @@
 import CardStore from "@stores/CardStore";
-import NetworkService from "./NetworkService";
+import NetworkService from "@/NetworkService";
 
 
 export default class CardService {
