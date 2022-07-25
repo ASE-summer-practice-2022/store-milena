@@ -4,9 +4,7 @@ import CardItem from "./CardItem";
 import Item from "../models/Item";
 import {storeNames} from "../stores/Enum";
 import {Grid, Pagination} from "@mui/material";
-import NetworkService from "../services/NetworkService";
 import {serviceNames} from "../services/Enum";
-import CardService from "../services/CardService";
 
 const CardList = inject(storeNames.CardStoreName, serviceNames.CardServiceName)(observer((props: any) => {
     const [page, setPage] = useState(1);
@@ -25,7 +23,11 @@ const CardList = inject(storeNames.CardStoreName, serviceNames.CardServiceName)(
           <div>
               <Grid container spacing={2} maxWidth="95%" margin="auto"> {
                   props.CardStore.items.map((item: Item) =>
-                      <Grid item xs={3} key={item.id}>
+                      <Grid item xs={3} key={item.id}
+                            style={{ minWidth: "340px",
+                                     display: "block",
+                                     marginLeft: "auto",
+                                     marginRight: "auto"}}>
                           <CardItem item={item}/>
                       </Grid>
                   )

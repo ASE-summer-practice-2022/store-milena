@@ -19,4 +19,5 @@ export default class BasketStore {
     @action deleteProduct = (id: number) => {
         this.items = this.items.filter(item => item.id !== id);
     };
+
 }

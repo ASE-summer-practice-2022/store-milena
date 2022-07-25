@@ -1,10 +1,9 @@
 import React from 'react';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import CardList from "./components/CardList";
 import Basket from "./components/Pages/Basket";
 import ItemPage from "./components/Pages/ItemPage";
 import { BrowserRouter } from 'react-router-dom';
-import Header from "./components/system/Header";
 import Page from "./components/Pages/Page";
 
 class RoutesPaths extends React.Component {
