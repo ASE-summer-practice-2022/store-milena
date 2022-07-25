@@ -1,4 +1,4 @@
-import CardStore from "../stores/CardStore";
+import CardStore from "@stores/CardStore";
 import NetworkService from "./NetworkService";
 
 

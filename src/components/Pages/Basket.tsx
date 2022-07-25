@@ -1,12 +1,12 @@
 import React from 'react';
 import { inject, observer } from "mobx-react";
-import { storeNames } from "../../stores/Enum";
+import { storeNames } from "@stores/Enum";
 import { Card, CardContent, CardMedia, Typography, Grid, Button } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import BasketStore from "../../stores/BasketStore";
-import Item from "../../models/Item";
+import BasketStore from "@stores/BasketStore";
+import Item from "@models/Item";
 import DeleteIcon from '@material-ui/icons/Delete';
-import CardStyles from "../../styles/UseStyles";
+import CardStyles from "@styles/UseStyles";
 import cx from 'clsx';
 
 const Basket = inject(storeNames.BasketStoreName)(observer((props: any) => {

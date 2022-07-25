@@ -1,10 +1,10 @@
 import React, {useEffect, useState}  from "react";
 import {inject, observer} from "mobx-react";
 import CardItem from "./CardItem";
-import Item from "../models/Item";
-import {storeNames} from "../stores/Enum";
+import Item from "@models/Item";
+import {storeNames} from "@stores/Enum";
 import {Grid, Pagination} from "@mui/material";
-import {serviceNames} from "../services/Enum";
+import {serviceNames} from "@services/Enum";
 
 const CardList = inject(storeNames.CardStoreName, serviceNames.CardServiceName)(observer((props: any) => {
     const [page, setPage] = useState(1);

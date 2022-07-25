@@ -31,9 +31,9 @@ const ButtonAppBar = inject(storeNames.BasketStoreName)(observer((props: any) =>
                     </IconButton>
                     <Typography component="div" sx={{ flexGrow: 1 }}/>
                     <StyledBadge badgeContent={props.BasketStore.items.length}>
-                        <Button variant='button' component={Link} to="/Basket">Корзина</Button>
+                        <Button component={Link} to="/Basket">Корзина</Button>
                     </StyledBadge>
-                    <Button variant='button' component={Link} to="/">Главная</Button>
+                    <Button component={Link} to="/">Главная</Button>
                 </Toolbar>
             </AppBar>
         </Box>
