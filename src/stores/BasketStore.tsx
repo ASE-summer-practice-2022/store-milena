@@ -6,11 +6,9 @@ export default class BasketStore {
     @observable products: Item[] = [];
     @observable items: Item[];
     @observable newItem: Item[] = [];
-    @observable count: number;
 
     constructor() {
-        makeObservable(this);
-        this.count = 0;
+        makeObservable(this);\
         this.items = [];
     }
 
@@ -22,7 +20,4 @@ export default class BasketStore {
         this.items = this.items.filter(item => item.id !== id);
     };
 
-    @action countAdd = () => {
-        this.count = this.count + 1;
-    };
 }
