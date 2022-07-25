@@ -8,7 +8,7 @@ export default class BasketStore {
     @observable newItem: Item[] = [];
 
     constructor() {
-        makeObservable(this);\
+        makeObservable(this);
         this.items = [];
     }
 
