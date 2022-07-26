@@ -12,11 +12,11 @@ export default class CardService {
     }
 
     async setCardStore(offset: number, limit: number) {
-        const url = '/api/products/part';
+        const alias = '/api/products/part';
         const body = JSON.stringify({ offset, limit });
         const type = 'POST';
 
-        const {data} = await this.networkService.fetch(url, body, type);
+        const {data} = await this.networkService.fetch(alias, body, type);
         this.cardStore.setProducts(data.products);
         this.cardStore.setCount(data.count);
     };

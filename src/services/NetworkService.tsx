@@ -1,27 +1,24 @@
 import react from 'react';
 
 export default class NetworkService {
-    token: string;
     endpoint: string;
 
-    constructor(endpoint: string, token: string) {
-        this.token = token;
+    constructor(endpoint: string) {
         this.endpoint = endpoint;
     }
     
-    fetch(url: string, body: any, type: string) {
+    fetch(alias: string, parameters?: object, body?: any, type?: string) {
         const Options = {
             method: type,
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'token': this.token
             },
             body
         };
 
         return (
-            fetch(`${this.endpoint}${url}`, Options)
+            fetch(`${this.endpoint}${alias}`, Options)
                 .then((response) => response.json())
         );
     }

@@ -8,7 +8,6 @@ import Page from "@pages/Page";
 import Login from "@pages/Login";
 
 class RoutesPaths extends React.Component {
-    
     withHeader(Component: any) {
         return (
                 <Page>

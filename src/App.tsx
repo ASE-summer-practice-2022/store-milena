@@ -11,29 +11,39 @@ import CardStore from "@stores/CardStore";
 import RoutesPaths from "@/route";
 import NetworkService from "@services/NetworkService";
 import CardService from "@services/CardService";
+import AppService from "@services/AppService";
 import BasketStore from "@stores/BasketStore";
 import AppStore from "@stores/AppStore";
+import UserStore from "@stores/UserStore";
+import LoaderStore from "@stores/LoaderStore";
 
 
 function App() {
     const cardStore = new CardStore();
     const basketStore = new BasketStore();
     const appStore = new AppStore();
+    const userStore = new UserStore();
+    const loaderStore = new LoaderStore();
 
     const endpoint = process.env.REACT_APP_ENDPOINT as string;
-    const token = appStore.token;
-
-    const networkService = new NetworkService(endpoint, token);
+    userStore.setToken(localStorage.getItem('token') || null);
+    
+    const networkService = new NetworkService(endpoint);
     const cardService = new CardService(cardStore, networkService);
+    const appService = new AppService(networkService, userStore);
 
     const stores = {
         [storeNames.CardStoreName]: cardStore,
         [storeNames.BasketStoreName]: basketStore,
+        [storeNames.AppStoreName]: appStore,
+        [storeNames.UserStoreName]: userStore,
+        [storeNames.LoaderStoreName]: loaderStore,
     };
     
     const services = {
         [serviceNames.NetworkServiceName]: networkService,
         [serviceNames.CardServiceName]: cardService,
+        [serviceNames.AppServiceName]: appService,
     };
 
   return (

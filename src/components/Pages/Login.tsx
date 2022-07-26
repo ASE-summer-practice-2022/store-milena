@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, ChangeEvent } from "react";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,16 +12,19 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import "@styles/Style.scss";
+import {storeNames} from "@stores/Enum";
+import {inject, observer} from "mobx-react";
 
-export default function SignIn() {
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
-    };
+const SignIn = inject(storeNames.AppStoreName)(observer((props: any) => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const login = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        await props.AppStore.login(email, password);
+        await props.AppStore.authentication();
+    }
 
     return (
             <Container component="main" maxWidth="xs">
@@ -33,26 +36,30 @@ export default function SignIn() {
                     <Typography component="h1" variant="h5">
                         Авторизация
                     </Typography>
-                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                    <Box component="form" onSubmit={(e: any) => login(e)} noValidate sx={{ mt: 1 }}>
                         <TextField
                             margin="normal"
                             required
                             fullWidth
                             id="email"
-                            label="Email-адрес"
+                            label="Email-адресс"
                             name="email"
+                            value={email}
                             autoComplete="email"
                             autoFocus
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <TextField
                             margin="normal"
                             required
                             fullWidth
                             name="password"
+                            value={password}
                             label="Пароль"
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                         <FormControlLabel
                             control={<Checkbox value="remember" color="primary" />}
@@ -82,4 +89,6 @@ export default function SignIn() {
                 </Box>
             </Container>
     );
-}
+}));
+
+export default SignIn;
