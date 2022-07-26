@@ -22,22 +22,17 @@ function App() {
     const cardStore = new CardStore();
     const basketStore = new BasketStore();
     const appStore = new AppStore();
-    const userStore = new UserStore();
-    const loaderStore = new LoaderStore();
 
     const endpoint = process.env.REACT_APP_ENDPOINT as string;
-    userStore.setToken(localStorage.getItem('token') || null);
     
     const networkService = new NetworkService(endpoint);
     const cardService = new CardService(cardStore, networkService);
-    const appService = new AppService(networkService, userStore);
+    const appService = new AppService(appStore, networkService);
 
     const stores = {
         [storeNames.CardStoreName]: cardStore,
         [storeNames.BasketStoreName]: basketStore,
         [storeNames.AppStoreName]: appStore,
-        [storeNames.UserStoreName]: userStore,
-        [storeNames.LoaderStoreName]: loaderStore,
     };
     
     const services = {

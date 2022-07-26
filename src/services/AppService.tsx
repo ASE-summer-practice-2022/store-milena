@@ -1,18 +1,29 @@
-import NetworkService from "@services/NetworkService";
-import UserStore from "@stores/UserStore";
+import AppStore from "@stores/AppStore";
+import NetworkService from "./NetworkService";
 
-export default class UserService {
-    private networkService: NetworkService;
-    private userStore: UserStore;
+export default class ItemService {
+    appStore: AppStore;
 
-    constructor(networkService: NetworkService, userStore: UserStore) {
+    networkService: NetworkService;
+
+    constructor(appStore: AppStore, networkService: NetworkService) {
+        this.appStore = appStore;
         this.networkService = networkService;
-        this.userStore = userStore;
     }
 
-    async getUsers() {
-        const { data } = await this.networkService.fetch({ alias: 'user', type: 'GET' });
-        console.log(data);
-        this.userStore.setUsers(data);
-    }
+    async login(email: string, password: string) {
+        const url = 'user/login';
+        const type = 'POST';
+        const body = {email, password};
+
+        const data = await this.networkService.getToken(url, body, type);
+
+        if (!data) {
+            console.log("wrong email or password");
+            return;
+        }
+
+        this.appStore.logIn();
+        this.networkService.setToken(data);
+    };
 }
