@@ -1,11 +1,11 @@
 import React from 'react';
 import { inject, observer } from "mobx-react";
-import { storeNames } from "../../stores/Enum";
+import { storeNames } from "@stores/Enum";
 //MUI and styles
 import { Card, CardContent, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import Divider from "@mui/material/Divider";
-import CardStyles from "../../styles/UseStyles";
+import CardStyles from "@styles/UseStyles";
 import cx from 'clsx';
 
 const ItemPage = inject(storeNames.CardStoreName)(observer((props: any) => {

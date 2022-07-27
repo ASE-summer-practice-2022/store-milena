@@ -4,7 +4,7 @@ export interface IColors {
     DimGray: string;
     middleGray: string;
     Byzantium: string;
-    black: string;
+    Black: string;
 }
 
 export const colors: IColors;

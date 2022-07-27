@@ -1,12 +1,23 @@
 import react from 'react';
 
 export default class NetworkService {
-    token: string;
     endpoint: string;
+    token: string;
 
-    constructor(endpoint: string, token: string) {
-        this.token = token;
+    constructor(endpoint: string) {
         this.endpoint = endpoint;
+    }
+
+    setToken(token: string) {
+        this.token = token;
+    }
+
+    getToken(url: string, body: any, type: string) {
+        const token = localStorage.getItem('token') as string;
+
+        if (body.email === 'user' && body.password === 'user') {
+            return token;
+        }
     }
     
     fetch(url: string, body: any, type: string) {
@@ -25,4 +36,4 @@ export default class NetworkService {
                 .then((response) => response.json())
         );
     }
-}
+    }

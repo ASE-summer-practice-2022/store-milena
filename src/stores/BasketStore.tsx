@@ -1,5 +1,5 @@
 import { action, makeObservable, observable } from 'mobx';
-import Item from "../models/Item"
+import Item from "@models/Item"
 
 
 export default class BasketStore {

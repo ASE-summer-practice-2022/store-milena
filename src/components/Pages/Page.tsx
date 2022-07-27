@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../system/Header';
+import Header from '@system/Header';
 
 interface PageProps {
     children: React.ReactNode

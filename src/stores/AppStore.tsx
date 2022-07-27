@@ -1,7 +1,24 @@
+import {makeAutoObservable} from "mobx";
+
 export default class AppStore {
-    token: string;
+
+    userInfo: any;
+    loggedIn: boolean;
 
     constructor() {
-        this.token = localStorage.getItem('token') as string;
+        makeAutoObservable(this);
+        this.loggedIn = false;
+    }
+
+    logIn() {
+        this.loggedIn = true;
+    }
+
+    logOut() {
+        this.loggedIn = false;
+    }
+
+    setUserInfo(userInfo: any) {
+        this.userInfo = userInfo;
     }
 }

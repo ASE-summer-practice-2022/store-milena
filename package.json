@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.5",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@material-ui/core": "^4.12.4",
@@ -25,14 +26,16 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1",
     "usestore-react": "^1.8.0",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -58,6 +61,7 @@
     "eslint": "^8.19.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-react": "^7.30.1",
+    "react-app-rewired": "^2.2.1",
     "typescript": "^4.7.4"
   }
 }

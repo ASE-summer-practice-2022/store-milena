@@ -1,7 +1,7 @@
 import React from 'react';
 import {inject, observer} from "mobx-react";
-import {storeNames} from "../stores/Enum";
-import BasketStore from "../stores/BasketStore";
+import {storeNames} from '@stores/Enum';
+import BasketStore from '@stores/BasketStore';
 //ROUTES
 import { Link } from 'react-router-dom';
 //MUI
@@ -9,9 +9,8 @@ import IconButton from '@mui/material/IconButton';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Divider from "@mui/material/Divider";
 import { Card, CardContent, Typography, CardActions } from "@mui/material";
-import CardStyles from "../styles/UseStyles";
+import CardStyles from '@styles/UseStyles';
 import cx from 'clsx';
-import "../styles/Style.scss";
 
 const CardItem = inject(storeNames.BasketStoreName)(observer((props: any) => {
     const styles = CardStyles();
