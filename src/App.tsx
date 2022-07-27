@@ -14,8 +14,6 @@ import CardService from "@services/CardService";
 import AppService from "@services/AppService";
 import BasketStore from "@stores/BasketStore";
 import AppStore from "@stores/AppStore";
-import UserStore from "@stores/UserStore";
-import LoaderStore from "@stores/LoaderStore";
 
 
 function App() {
