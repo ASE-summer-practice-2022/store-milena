@@ -16,12 +16,7 @@ export default class ItemService {
         const type = 'POST';
         const body = {email, password};
 
-        const data = await this.networkService.getToken(url, body, type);
-
-        if (!data) {
-            console.log("wrong email or password");
-            return;
-        }
+        const {data} = await this.networkService.getToken(url, body, type);
 
         this.appStore.logIn();
         this.networkService.setToken(data);
